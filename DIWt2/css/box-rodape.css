@@ -1,0 +1,32 @@
+/********************
+Componente box-rodape
+********************/
+.box-rodape {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.box-rodape > .conteudo {
+
+}
+
+.rodape > .copyright {
+    margin-top: 10px;
+}
+
+.box-rodape > .titulo {
+    margin: 0;
+}
+
+.box-rodape > .conteudo > ul > li {
+    display: inline-block;
+}
+
+.box-rodape > .conteudo > ul {
+    margin: 0;
+    padding: 0;
+}
+
+*{
+    font-family: 'Times New Roman', Helvetica, sans-serif;
+}

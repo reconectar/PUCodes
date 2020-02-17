@@ -1,0 +1,14 @@
+/********************
+Componente form-pesquisa
+********************/
+.form-pesquisa {
+    float: right;
+    margin-top: 35px;
+    margin-right: 10px;
+    border: none;
+
+}
+
+.form_pesquisa > .consulta {}
+
+.form_pesquisa > .acao {}

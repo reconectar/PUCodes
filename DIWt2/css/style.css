@@ -1,0 +1,78 @@
+/********************
+Arquivo de estilos base do site
+  - Importação de folha de estilo de normalização (normalize.css)
+  - Importação de componentes do site
+  - Definição dos elementos estruturantes do site
+********************/
+@import "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css";
+@import "menu-principal.css";
+@import "form-pesquisa.css";
+@import "destaque-artigo.css";
+@import "box-rodape.css";
+
+body {
+    font-size: 17px;
+    font-family: Georgia, sans-serif, serif;
+    line-height: 1.7em;
+}
+
+.cabecalho {
+    overflow: hidden;
+    clear: both;
+    width: 100%;
+    background-color: lightgreen;
+}
+
+.cabecalho > .logo {
+    position: fixed;
+    left: -1em;
+}
+
+main {
+    width: 75%;
+    float: right;
+    padding-bottom: 10px;
+}
+
+aside {
+    /*background-color: rgba(31, 235, 14, 0.22);*/
+    width: 23%;
+    float: left;
+    font-style: italic;
+    font-size: 15px;
+
+}
+
+aside img {
+    padding-top: 50px;
+    padding-left: 30px;
+}
+
+
+.conteudo {}
+
+.rodape {
+    width: 100%;
+}
+
+.rodape table {
+    padding-left: 330px;
+    padding-bottom: 60px;
+    width: 100%;
+    border-width: 0px 0px;
+}
+
+.rodape table td {
+    padding-right: 50px;
+}
+
+.copyright {
+    padding-left: 500px;
+    color: gray;
+    font-style: italic !important;
+    padding-top: 50px;
+}
+
+.gambiarra {
+    padding-left: 330px;
+}

@@ -1,0 +1,28 @@
+/********************
+Componente menu-principal
+********************/
+.menu-principal {
+    float: right;
+    margin: 10px 5px;
+
+}
+
+.menu-principal > .lista {
+    padding: 0;
+}
+
+.menu-principal > .lista > .item {
+    display: inline-block;
+    margin-right: 100px;
+    padding: 5px;
+}
+
+.menu-principal a {
+    text-decoration: none;
+    color: black;
+}
+
+.menu-principal a:hover {
+    color: green;
+    background-color: #8bed8b;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div id="Calculadora">
+        <label>x</label>
+        <input id="x" type="text">
+
+        <br>
+        <label>y</label>
+        <input id="y" type="text">
+
+        <br>
+        <label>R:</label>
+        <input id="r" type="text" readonly="true">
+        <br>
+        <select onchange="disparar()" id="opS">
+            <option hidden="true" value="0">Escolher...</option>
+            <option value="1">Somar</option>
+            <option value="2">Subtrair</option>
+            <option value="3">Dividir</option>
+            <option value="4">Multiplicar</option>
+        </select>
+        <button id="go" type="button" onclick="disparar()">GO</button>
+    </div>
+</body>
+
+</html>

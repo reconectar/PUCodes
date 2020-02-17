@@ -1,0 +1,263 @@
+// Questao 1
+
+public static void main(String[] args) {
+		CLista lista1 = new CLista();
+		int soma = 0;
+		for(int i = 0; i<10; i++) {
+			lista1.insereComeco(i+1);
+			soma+= (i+1);
+		}
+		
+		System.out.println(soma);
+		
+	}
+
+
+// Questao 2
+
+public static void main(String[] args) {
+		CFila fila1 = new CFila();
+		int soma = 0;
+		for(int i = 0; i<10; i++) {
+			fila1.enfileira(i+1);
+			soma+= (i+1);
+		}
+
+		System.out.println(soma);
+
+	}
+
+// Questao 3
+
+	public static void main(String[] args) {
+		CLista lista1 = new CLista();
+		lista1.insereComeco(1);
+		lista1.insereComeco(5.1);
+		lista1.insereComeco('c');
+		lista1.insereComeco("Shulambs");
+		lista1.insereComeco("ola" + " irmao");
+		lista1.insereComeco(-1);
+		lista1.insereComeco(-5.1);
+		lista1.insereComeco((double) 5);
+		lista1.insereComeco(((double) 5) + ((int) 3));
+		lista1.insereComeco(((double) 5) + ((float) 3));
+
+		lista1.imprime();
+	}
+
+// Questao 4
+
+	public static void main(String[] args) {
+		
+		CLista lista1 = new CLista();
+		
+		Aluno aluno1 = new Aluno("arthur1", 11121);
+		Aluno aluno2 = new Aluno("arthur2", 11121);
+		Aluno aluno3 = new Aluno("arthur3", 11121);
+		Aluno aluno4 = new Aluno("arthur4", 11121);
+		Aluno aluno5 = new Aluno("arthur5", 11121);	
+		
+		lista1.insereComeco(aluno1);
+		lista1.insereComeco(aluno2);
+		lista1.insereComeco(aluno3);
+		lista1.insereComeco(aluno4);
+		lista1.insereComeco(aluno5);
+	}
+
+// Questao 5
+
+	//DENTRO DA CLASSE ALUNO
+		@Override
+	public String toString() {
+		
+		i++;
+		return i +" - " + nome + " - " + matricula;
+	}
+	//
+	
+	//MAIN
+	public static void main(String[] args) {
+		
+		CLista lista1 = new CLista();
+		
+		Aluno aluno1 = new Aluno("arthur1", 11121);
+		Aluno aluno2 = new Aluno("arthur2", 11121);
+		Aluno aluno3 = new Aluno("arthur3", 11121);
+		Aluno aluno4 = new Aluno("arthur4", 11121);
+		Aluno aluno5 = new Aluno("arthur5", 11121);	
+		
+		lista1.insereFim(aluno1);
+		lista1.insereFim(aluno2);
+		lista1.insereFim(aluno3);
+		lista1.insereFim(aluno4);
+		lista1.insereFim(aluno5);
+		
+		lista1.imprime(); 
+	}
+
+// Questao 6
+
+	static int somaTodas(CPilha x, CFila y, CLista z){
+		int soma = 0;
+		while(x.quantidade()!=0) {
+			soma+=(int)x.desempilha();
+		}
+		while(y.quantidade()!=0) {
+			soma+=(int)y.desenfileira();
+		}
+		while(z.quantidade()!=0) {
+			soma+=(int)z.removeRetornaFim();
+		}				
+		return soma;
+	}
+
+// Questao 7
+
+	static int qtdPositivos(CPilha x){
+		int qtd = 0;
+		while(x.quantidade()!=0) {
+			if((int)x.peek()>0) {
+				qtd++;			
+			}else {
+				x.desempilha();
+			}
+		}
+		
+		return qtd;
+	}
+
+// Questao 8
+
+public static int numOcorrencias(CFila a, int b) {
+		int achei = 0;
+		while(a.quantidade()!=0) {
+			if((int)a.desenfileira()==b) {
+				achei++;
+			}
+		}
+		return achei;
+	}
+
+// Questao 9
+
+static CLista criaCLista(int opcao, int n) {
+		CLista lista1 = new CLista();
+		switch(opcao) {
+		case 0:
+			for(int i=0;i<n;i++) {
+				lista1.insereFim(i);
+			}
+			break;
+		case 1:
+			for(int i=n-1;i>=0;i--) {
+				lista1.insereFim(i);
+			}
+			break;
+		case 2:
+			for(int i=n-1;i>=0;i--) {
+				lista1.insereFim((int)(Math.random()*((9-0)+1))+0);
+			}
+			break;
+		}
+		return lista1;
+	}
+	
+	static CFila criaCFila(int opcao, int n) {
+		CFila fila1 = new CFila();
+		switch(opcao) {
+		case 0:
+			for(int i=0;i<n;i++) {
+				fila1.enfileira(i);
+			}
+			break;
+		case 1:
+			for(int i=n-1;i>=0;i--) {
+				fila1.enfileira(i);
+			}
+			break;
+		case 2:
+			for(int i=n-1;i>=0;i--) {
+				fila1.enfileira((int)(Math.random()*((9-0)+1))+0);
+			}
+			break;
+		}
+		return fila1;		
+	}
+	static CPilha criaCPilha(int opcao, int n) {
+		CPilha pilha1 = new CPilha();
+		switch(opcao) {
+		case 0:
+			for(int i=0;i<n;i++) {
+				pilha1.empilha(i);
+			}
+			break;
+		case 1:
+			for(int i=n-1;i>=0;i--) {
+				pilha1.empilha(i);
+			}
+			break;
+		case 2:
+			for(int i=n-1;i>=0;i--) {
+				pilha1.empilha((int)(Math.random()*((9-0)+1))+0);
+			}
+			break;
+		}
+		return pilha1;		
+	}
+
+// Questao 10
+
+static void imprimeCLista(CLista A) {
+		CLista aux = new CLista();
+
+		for (int i = 0; i < 15; i++) {
+			aux.insereFim(A.removeRetornaFim());
+		}
+
+		for (int i = 0; i < 15; i++) {
+			A.insereFim(aux.retornaUltimo());
+			System.out.print(aux.removeRetornaFim() + " | ");
+			if (((i + 1) % 10) == 0) {
+				System.out.println();
+			}
+		}
+	}
+
+	static void imprimeCFila(CFila Q) {
+		CFila aux = new CFila();
+
+		for (int i = 0; i < 15; i++) {
+			aux.enfileira(Q.desenfileira());
+		}
+
+		for (int i = 0; i < 15; i++) {
+			Q.enfileira(aux.peek());
+			System.out.print(aux.desenfileira() + " | ");
+			if (((i + 1) % 10) == 0) {
+				System.out.println();
+			}
+		}
+	}
+
+	static void imprimeCPilha(CPilha S) {
+		CPilha aux = new CPilha();
+
+		for (int i = 0; i < 15; i++) {
+			aux.empilha(S.desempilha());
+		}
+
+		for (int i = 0; i < 15; i++) {
+			S.empilha(aux.peek());
+			System.out.print(aux.desempilha() + " | ");
+			if (((i + 1) % 10) == 0) {
+				System.out.println();
+			}
+		}
+	}
+
+
+
+
+
+
+
