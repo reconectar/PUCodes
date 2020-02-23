@@ -5,7 +5,8 @@ package util;
  *
  *
  * @author Rodrigo Richard Gomes
- * @version 1.00 2018/3/16
+ * @coauthor Arthur Gramiscelli Branco
+ * @version 2.00 2020/2/23
  */
 
 public class CFila {
@@ -31,6 +32,60 @@ public class CFila {
 		for (CCelula c = frente.prox; c != null; c = c.prox)
 			System.out.print(c.item + " ");
 		System.out.println("] ");
+	}
+
+	// By Arthur
+	// Encontra o Indice do menor int numa fila de ints
+	private int encontraIndiceMenorInt() {
+		int indiceMenorInt = 1;
+		int valorMenor = (int) this.peek();
+		int indice=0;
+		for (CCelula c = frente.prox; c != null; c = c.prox){
+			indice++;
+			if ((int) c.item < valorMenor){
+				valorMenor = (int) c.item;
+				indiceMenorInt = indice;
+			}
+		}
+		return indiceMenorInt;
+	}
+
+	//By Arthur
+	//Remove e retorna o menor int numa fila ints
+	public int retornaRemoveMenorInt() {
+		int indice = 0;
+		int item = (int) frente.prox.item;
+		int indiceMenorInt = encontraIndiceMenorInt();
+		for (CCelula c = frente.prox; c != null; c = c.prox) { //Percorre a fila
+			indice++;
+			if (indiceMenorInt - 1 == indice) { //Menos um para que seja possivel desenfileirar a Calula
+				item = (int) c.prox.item;
+				c.prox = c.prox.prox;
+				qtde--;
+				return item;
+			}
+		}
+		frente.prox = frente.prox.prox; //Caso 1 elemento na fila
+		qtde--;
+		tras=frente;
+		return item;
+	}
+
+	public int retornaMenorInt() {
+		int indice = 0;
+		int item = 0;
+		if(this.quantidade()!=0){
+			item = (int) frente.prox.item;
+		}
+		int indiceMenorInt = encontraIndiceMenorInt();
+		for (CCelula c = frente.prox; c != null; c = c.prox) { //Percorre a fila
+			indice++;
+			if (indiceMenorInt - 1 == indice) { //Menos um para que seja possivel desenfileirar a Calula
+				item = (int) c.prox.item;
+				return item;
+			}
+		}
+		return item;
 	}
 
 	// Insere um novo Item no fim da fila.

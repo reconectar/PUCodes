@@ -5,7 +5,8 @@ package util;
  *
  *
  * @author Rodrigo Richard Gomes
- * @version 1.00 2018/3/16
+ * @coauthor Arthur Gramiscelli Branco
+ * @version 2.00 2020/2/23
  */
 
 public class CCelula {
